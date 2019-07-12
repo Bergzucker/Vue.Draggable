@@ -2724,7 +2724,6 @@ var helper = __webpack_require__("c649");
 
 
 
-external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["Sortable"].mount(new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["MultiDrag"]());
 
 function buildAttribute(object, propName, value) {
   if (value === undefined) {
@@ -2971,6 +2970,7 @@ var draggableComponent = {
     });
 
     !("draggable" in options) && (options.draggable = ">*");
+    external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["Sortable"].mount(new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["MultiDrag"]());
     this._sortable = new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["Sortable"](this.rootContainer, options);
     this.computeIndexes();
   },

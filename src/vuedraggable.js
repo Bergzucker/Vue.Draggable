@@ -217,14 +217,16 @@ const draggableComponent = {
       return res;
     }, {});
 
-    const options = Object.assign({}, this.options, attributes, optionsAdded, {
+    let options = Object.assign({}, this.options, attributes, optionsAdded, {
       onMove: (evt, originalEvent) => {
         return this.onDragMove(evt, originalEvent);
       }
     });
     !("draggable" in options) && (options.draggable = ">*");
     if (options.multiDrag) {
+      // debugger;
       Sortable.mount(new MultiDrag());
+      options = { selectedClass: "sortable-selected", ...options };
     }
     this._sortable = new Sortable(this.rootContainer, options);
     this.computeIndexes();

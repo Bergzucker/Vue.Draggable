@@ -29,6 +29,7 @@
       <draggable
         :list="list"
         :disabled="!enabled"
+        :multiDrag="true"
         class="list-group"
         ghost-class="ghost"
         :move="checkMove"

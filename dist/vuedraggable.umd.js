@@ -2719,6 +2719,7 @@ function _toConsumableArray(arr) {
 }
 // EXTERNAL MODULE: external {"commonjs":"sortablejs","commonjs2":"sortablejs","amd":"sortablejs","root":"Sortable"}
 var external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_ = __webpack_require__("a352");
+var external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_);
 
 // EXTERNAL MODULE: ./src/util/helper.js
 var helper = __webpack_require__("c649");
@@ -2979,8 +2980,12 @@ var draggableComponent = {
     });
 
     !("draggable" in options) && (options.draggable = ">*");
-    external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["Sortable"].mount(new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["MultiDrag"]());
-    this._sortable = new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["Sortable"](this.rootContainer, options);
+
+    if (options.multiDrag) {
+      external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_default.a.mount(new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_["MultiDrag"]());
+    }
+
+    this._sortable = new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_default.a(this.rootContainer, options);
     this.computeIndexes();
   },
   beforeDestroy: function beforeDestroy() {

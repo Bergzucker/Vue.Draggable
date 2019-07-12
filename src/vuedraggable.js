@@ -1,4 +1,4 @@
-import { Sortable, MultiDrag } from "sortablejs";
+import Sortable, { MultiDrag } from "sortablejs";
 import { insertNodeAt, camelize, console, removeNode } from "./util/helper";
 
 function buildAttribute(object, propName, value) {
@@ -223,7 +223,9 @@ const draggableComponent = {
       }
     });
     !("draggable" in options) && (options.draggable = ">*");
-    Sortable.mount(new MultiDrag());
+    if (options.multiDrag) {
+      Sortable.mount(new MultiDrag());
+    }
     this._sortable = new Sortable(this.rootContainer, options);
     this.computeIndexes();
   },

@@ -1,5 +1,7 @@
-import Sortable from "sortablejs";
+import { Sortable, MultiDrag } from "sortablejs";
 import { insertNodeAt, camelize, console, removeNode } from "./util/helper";
+
+Sortable.mount(new MultiDrag());
 
 function buildAttribute(object, propName, value) {
   if (value === undefined) {

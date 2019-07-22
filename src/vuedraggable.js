@@ -224,7 +224,6 @@ const draggableComponent = {
     });
     !("draggable" in options) && (options.draggable = ">*");
     if (options.multiDrag) {
-      // debugger;
       Sortable.mount(new MultiDrag());
       options = { selectedClass: "sortable-selected", ...options };
     }

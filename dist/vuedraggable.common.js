@@ -3402,7 +3402,7 @@ function getComponentAttributes($attrs, componentData) {
 }
 
 var eventsListened = ["Start", "Add", "Remove", "Update", "End"];
-var eventsToEmit = ["Choose", "Unchoose", "Sort", "Filter", "Clone"];
+var eventsToEmit = ["Choose", "Unchoose", "Sort", "Filter", "Clone", "Select", "Deselect"];
 var readonlyProperties = ["Move"].concat(eventsListened, eventsToEmit).map(function (evt) {
   return "on" + evt;
 });

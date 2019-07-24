@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-8">
       <h3>Nested draggable</h3>
-      <nested-draggable :tasks="list" />
+      <nested-draggable :tasks="listComputed" />
     </div>
 
     <rawDisplayer class="col-3" :value="list" title="List" />
@@ -18,8 +18,46 @@ export default {
   components: {
     nestedDraggable
   },
+  computed: {
+    listComputed() {
+      return this.list2
+    }
+  },
   data() {
     return {
+      list2: [
+        {
+          name: "task 1",
+          tasks: [
+            {
+              name: "task 2",
+              tasks: []
+            }
+          ]
+        },
+        {
+          name: "task 3",
+          tasks: [
+            // {
+            //   name: "task 4",
+            //   tasks: []
+            // }
+          ]
+        },
+        {
+          name: "task 4",
+          tasks: [
+            // {
+            //   name: "task 4",
+            //   tasks: []
+            // }
+          ]
+        },
+        // {
+        //   name: "task 5",
+        //   tasks: []
+        // }
+      ],
       list: [
         {
           name: "task 1",
@@ -33,16 +71,25 @@ export default {
         {
           name: "task 3",
           tasks: [
-            {
-              name: "task 4",
-              tasks: []
-            }
+            // {
+            //   name: "task 4",
+            //   tasks: []
+            // }
           ]
         },
         {
-          name: "task 5",
-          tasks: []
-        }
+          name: "task 4",
+          tasks: [
+            // {
+            //   name: "task 4",
+            //   tasks: []
+            // }
+          ]
+        },
+        // {
+        //   name: "task 5",
+        //   tasks: []
+        // }
       ]
     };
   }
